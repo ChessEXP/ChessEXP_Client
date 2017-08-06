@@ -35,9 +35,7 @@ export class SignUp extends Component {
           buttonText="Login"
           onSuccess={responseGoogle}
           onFailure={responseGoogle}
-        />,
-        <button id='googleButton'></button>
-
+        />
       </form>
     );
   }

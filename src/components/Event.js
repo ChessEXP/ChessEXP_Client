@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { RSVPBar } from './RSVPBar';
+
 export class Event extends Component {
   constructor(props) {
     super();
@@ -41,6 +43,7 @@ export class Event extends Component {
             }) }
           </ul>
         </div>
+        <RSVPBar />
       </div>
 
     );
