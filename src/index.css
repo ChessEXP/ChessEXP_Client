@@ -1,5 +1,40 @@
 body {
+  /*display: flex;*/
+  background: #08BDEE !important;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+.header-logo {
+  font-size: 40px !important;
+}
+
+.login-button {
+  margin-right: 15%;
+  position: relative;
+  float: right;
+  vertical-align: top;
+}
+
+.render-current-user {
+  background-color: #EED008 !important;
+  border: 10px solid rebeccapurple !important;
+  float: right;
+  border:blue 1px solid;
+  display:inline-block;
+  *display:inline;zoom:1;
+  margin:0px;outline:none;
+  vertical-align: top;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  margin-top: 40px;
+  max-width: 600px;
+  padding: 30px;
+
 }
