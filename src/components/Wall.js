@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Header } from 'semantic-ui-react';
+import $ from 'jquery';
 
 import { GoalBar } from './GoalBar';
 import { ChessBoard } from './ChessBoard';
@@ -12,6 +13,10 @@ export class Wall extends Component {
     this.state = {
       currentUser: props.userInfo
     }
+  }
+
+  componentDidMount() {
+    $('.board-hidden').css('display', 'block');
   }
 
   render() {

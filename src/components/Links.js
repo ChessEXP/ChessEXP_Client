@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GoogleLogin from 'react-google-login';
 
-import About from './About';
+import { About } from './About';
 import { EventsPage } from './EventsPage';
 import { Wall } from './Wall';
 
@@ -15,7 +15,7 @@ export class Links extends Component {
     this.state = {
       mountWall: false,
       mountEvent: false,
-      mountAbout: false,
+      mountAbout: true,
       currentUser: '',
       logoutText: 'Login',
       btn: true
@@ -71,8 +71,9 @@ export class Links extends Component {
       userShow = (
             <Segment className='render-current-user'>
               <Image src={this.state.currentUser.imageUrl} alt="Avatar" bordered/>
+
               <i className="israel flag"></i> <br/>
-              <Label as='a' color='teal' image>
+              <Label as='a' color='orange' image>
                 <Label>
                   <Icon name='mail' /> 12
                 </Label>
@@ -87,7 +88,7 @@ export class Links extends Component {
     } else if (this.state.mountAbout) {
       aboutShow = <About />
     } else if (this.state.mountWall) {
-      wallShow = <Wall userInfo={ this.state.currentUser } />
+      wallShow = <Wall userInfo={ (this.state.currentUser !== '') ? this.state.currentUser : 'Not-loggedin-Person' } />
     }
 
     return (

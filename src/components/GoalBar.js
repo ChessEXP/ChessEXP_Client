@@ -12,7 +12,7 @@ export class GoalBar extends Component {
   render() {
     return(
       <div className="goal-bar-container">
-        <p>Hello from the GoalBar!</p>
+
       </div>
     );
   }

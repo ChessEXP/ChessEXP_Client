@@ -6,6 +6,15 @@ body {
   font-family: sans-serif;
 }
 
+li {
+  list-style-type: none
+}
+
+.event-title {
+  font-size: 25px;
+  min-height: 60px;
+}
+
 .header-logo {
   font-size: 40px !important;
 }
@@ -17,9 +26,12 @@ body {
   vertical-align: top;
 }
 
+/*1C5089, 70ADEF, 6D8DAE, 68DEC1, A8F56B*/
+
 .render-current-user {
-  background-color: #EED008 !important;
-  border: 10px solid rebeccapurple !important;
+  background: url('/img/avatar-bkg.png') no-repeat center !important;
+  background-size: 100% !important;
+  border: 10px solid black !important;
   float: right;
   border:blue 1px solid;
   display:inline-block;
@@ -37,4 +49,81 @@ body {
   max-width: 600px;
   padding: 30px;
 
+}
+
+  /*chessboard styles, edited with credit to Chris Oakman*/
+
+.clearfix-7da63 {
+  clear: both;
+}
+
+.board-b72b1 {
+  border: 10px soild rebeccapurple;
+  box-sizing: content-box;
+}
+
+.square-55d63 {
+  float: left;
+  position: relative;
+}
+
+.black-3c85d {
+  background-color: #6D8DAE;
+  color: #70ADEF;
+  }
+
+.white-1e1d7 {
+  background-color: #68DEC1;
+  color: #A8F56B;
+}
+
+.board-hidden {
+  display: none;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.highlight1-32417, .highlight2-9c5d2 {
+  -webkit-box-shadow: inset 0 0 3px 3px yellow;
+  -moz-box-shadow: inset 0 0 3px 3px yellow;
+  box-shadow: inset 0 0 3px 3px yellow;
+}
+
+.notation-322f9 {
+  cursor: default;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  position: absolute;
+}
+
+.alpha-d2270 {
+  bottom: 1px;
+  right: 3px;
+}
+
+.numeric-fc462 {
+  top: 2px;
+  left: 2px;
+}
+
+.about-react {
+  margin-left: 20px;
+}
+
+.rsvp-error {
+  color: red;
+}
+
+.event-grid-row {
+  min-width: 1000px;
+  align-items: center;
+}
+
+.flex-align {
+  min-width: 300px !important
+}
+
+.segment-rsvp {
+  /*align-items: flex-end;*/
+  max-width: 200px;
 }

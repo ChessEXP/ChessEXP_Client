@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button, Segment } from 'semantic-ui-react';
 
 export class SocialMedia extends Component {
   constructor(props) {
@@ -12,7 +13,13 @@ export class SocialMedia extends Component {
   render() {
     return(
       <div className="social-media-container">
-        <h1>...</h1>
+        <div>
+          <Segment inverted>
+            <Button circular color='grey' icon='github' />
+            <Button circular color='linkedin' icon='linkedin' />
+            <Button circular color='google plus' icon='google plus' />
+          </Segment>
+        </div>
       </div>
     );
   }
