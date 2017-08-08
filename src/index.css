@@ -33,7 +33,7 @@ li {
   background-size: 100% !important;
   border: 10px solid #A8F56B !important;
   float: right;
-  margin-top: -40px !important; 
+  margin-top: -40px !important;
 }
 
 .inner-border {
@@ -66,6 +66,7 @@ li {
 .board-b72b1 {
   border: 10px soild rebeccapurple;
   box-sizing: content-box;
+  margin: auto;
 }
 
 .square-55d63 {

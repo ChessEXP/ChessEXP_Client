@@ -5,3 +5,7 @@
 .history span {
   margin-right: 8px;
 }
+
+.chessboard-segment {
+  width: fit-content;
+}

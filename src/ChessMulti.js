@@ -16,13 +16,13 @@ export default class ChessMulti extends Component {
   render() {
     return (
       <div className='board-hidden view row'>
-        <Segment inverted>
+        <Segment inverted className='chessboard-segment'>
           <div className='column column-50'>
             <div id='game-board' style={{width: 600 + 'px'}}></div>
 
           </div>
           <div className='column column-50'>
-            <div className="links">
+            <div className="game-links">
               <div>
                 <a target="_blank" href={domain() + "/#/" + this.state.p1_token}>
                 <Button inverted color='red'>
