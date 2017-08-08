@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 // import { RSVPBar } from './RSVPBar';
 
-import { Button, Segment, Label } from 'semantic-ui-react';
+import { Button, Segment, Label, List, Transition} from 'semantic-ui-react';
 
 
 export class Event extends Component {
@@ -11,6 +11,7 @@ export class Event extends Component {
     console.log(props);
 
     this.state = {
+      eventDay: props.day,
       eventTitle: props.title,
       eventLocat: props.location,
       eventHost: props.host,
@@ -19,7 +20,8 @@ export class Event extends Component {
       eventRSVP: props.rsvpList,
       eventChat: props.commentList,
       toggleDetails: false,
-      errorMessage: ''
+      errorMessage: '',
+      currentUser: 'Drew'
     }
   }
 
@@ -33,8 +35,8 @@ export class Event extends Component {
   }
 
   onRSVP() {
-    let subState = ['currentUser'];
-    if (this.state.eventRSVP[0] !== 'currentUser'){
+    let subState = [(this.state.currentUser || 'currentUser')];
+    if (this.state.eventRSVP[0] != 'Drew' || this.state.eventRSVP[0] != this.state.currentUser){
     this.state.eventRSVP.map((User) => {
         subState.push(User);
 
@@ -67,13 +69,15 @@ export class Event extends Component {
               <p className="event-description">'{ this.state.eventDesc }'</p>
               <div className="goal-bar">
                 <Segment className="segment-rsvp" inverted raised>
-                  <Label as='a' color='red' ribbon>Date</Label>
+                  <Label as='a' color='red' ribbon>{this.state.eventDay}</Label>
                   <Button size='huge' onClick={ this.onRSVP.bind(this) }>RSVP</Button>
                 <small className="rsvp-error">{ this.state.errorMessage }</small>
                 <ul>
                   {this.state.eventRSVP.map((person, i) => {
                     return (
-                      <li key={i + 50}>{person}</li>
+                      <List.Item key={i + 50}>
+                        {person}
+                      </List.Item>
                     );
                   })}
                 </ul>

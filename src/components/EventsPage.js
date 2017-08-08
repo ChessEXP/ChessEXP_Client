@@ -34,7 +34,9 @@ export class EventsPage extends Component {
         return(
           <div className="item-container">
             <Grid.Column className='flex-align'>
-              <li key={i}><Event  rsvpList={event.attendees}
+              <li key={i}><Event
+                day={['Weds', 'Thurs', 'Fri', 'Sat', 'Sun', 'Mon', 'Tues'][i]}
+                rsvpList={event.attendees}
                 commentList={event.chatLog}
                 host={event.host}
                 title={event.title}
