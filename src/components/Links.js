@@ -106,8 +106,6 @@ export class Links extends Component {
           <Button inverted color='olive' onClick={ this.onShowEvent.bind(this) }>Events</Button>
           <Button inverted color='blue' onClick={ this.onShowAbout.bind(this) }>About</Button>
 
-          <Image className='app-logo' src='./img/knight.png'></Image>
-
           { userShow }
 
             <span className='float-right'>
@@ -123,6 +121,9 @@ export class Links extends Component {
 
         </Segment>
         </nav>
+
+        <Image className='app-logo-knight-right' src='./img/applogo2.png'></Image>
+        <Image className='app-logo-knight-left' src='./img/applogo.png'></Image>
 
         <div className="float-left">
           { eventShow }

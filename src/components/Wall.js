@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Header } from 'semantic-ui-react';
 import $ from 'jquery';
 
 import { GoalBar } from './GoalBar';
@@ -22,7 +21,6 @@ export class Wall extends Component {
   render() {
     return(
       <div className="wall-container">
-        <Header as='h1'>Welcome back {this.state.currentUser.givenName}.</Header>
         <GoalBar />
         {/* <ChessBoard /> */}
       </div>

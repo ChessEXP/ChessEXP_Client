@@ -21,7 +21,11 @@ export class About extends Component {
       <div className="about-container">
         <SocialMedia/>
         <div className="about-react">
-          <List>
+          <img src='./img/node.png' className="stack-format" alt="logo" />
+          <img src='./img/express.png' className="stack-express" alt="logo" />
+          <img src='./img/logo.svg' className="App-logo" alt="logo" />
+          <img src='./img/pg.svg.png' className="stack-format" alt="logo" />
+          <List className='about-list'>
             <List.Item>
               <List.Icon name='folder'/>
               <List.Content>

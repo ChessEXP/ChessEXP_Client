@@ -19,6 +19,57 @@ li {
   font-size: 40px !important;
 }
 
+.about-container{
+  min-width: 800px;
+  text-align: center;
+}
+
+.about-list {
+  text-align: left;
+}
+
+.app-logo-knight-right {
+  margin: auto;
+  margin-top: -75px;
+  margin-right: 45%;
+  position: relative;
+  display: inline-block;
+  height: 175px;
+  width: 160px;
+}
+.app-logo-knight-left {
+  margin: auto;
+  margin-top: -210px;
+  margin-right: 38%;
+  position: relative;
+  display: inline-block;
+  height: 175px;
+  width: 160px;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.stack-format {
+  margin-top: 20px !important;
+  margin: -10px;
+  height: 100px;
+  width: 100px;
+}
+
+.stack-express {
+  margin-right: -30px;
+  width: 200px;
+  height: 60px;
+}
+
 .login-button {
   margin-right: 15%;
   position: relative;
@@ -51,10 +102,7 @@ li {
 }
 
 .float-left {
-  margin-top: 40px;
-  max-width: 600px;
-  padding: 30px;
-
+  display: flex;
 }
 
   /*chessboard styles, edited with credit to Chris Oakman*/
@@ -86,8 +134,7 @@ li {
 
 .board-hidden {
   display: none;
-  width: 50%;
-  margin: 0 auto;
+  margin: auto auto 100px 30%;
 }
 
 .highlight1-32417, .highlight2-9c5d2 {
@@ -116,14 +163,17 @@ li {
 .about-react {
   margin-left: 20px;
 }
+.about-container{
+  margin-top: 7%;
+  margin-left: 10%;
+}
 
 .rsvp-error {
   color: red;
 }
 
 .event-grid-row {
-  min-width: 1000px;
-  align-items: center;
+  min-width: 800px;
 }
 
 .flex-align {
@@ -133,4 +183,28 @@ li {
 .segment-rsvp {
   /*align-items: flex-end;*/
   max-width: 200px;
+}
+
+.game-labels {
+  margin-right: 3px !important;
+  height: 30px !important;
+  padding: 10px !important;
+}
+
+.event-divider {
+  margin-top: 20px;
+  background-color: black;
+  color: black;
+  height: 10px;
+}
+
+.item-container {
+  padding: 10px;
+  text-align: center;
+}
+
+.events-page-container {
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
 }

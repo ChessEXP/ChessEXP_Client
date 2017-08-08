@@ -32,16 +32,20 @@ export class EventsPage extends Component {
     let List = this.state.eventList.map((event, i) => {
 
         return(
-           <Grid.Column className='flex-align'>
-             <li key={i}><Event  rsvpList={event.attendees}
-               commentList={event.chatLog}
-               host={event.host}
-               title={event.title}
-               description={event.description}
-               image={event.image}
-               location={event.location}
-             /></li>
-           </Grid.Column>
+          <div className="item-container">
+            <Grid.Column className='flex-align'>
+              <li key={i}><Event  rsvpList={event.attendees}
+                commentList={event.chatLog}
+                host={event.host}
+                title={event.title}
+                description={event.description}
+                image={event.image}
+                location={event.location}
+              /></li>
+            </Grid.Column>
+
+            <hr className='event-divider'/>
+          </div>
         );
       });
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Segment, Button } from 'semantic-ui-react';
+import { Segment, Button, Label, Menu } from 'semantic-ui-react';
 
 const { firebase, Chess, ChessBoard } = window;
 
@@ -19,23 +19,32 @@ export default class ChessMulti extends Component {
         <Segment inverted className='chessboard-segment'>
           <div className='column column-50'>
             <div id='game-board' style={{width: 600 + 'px'}}></div>
+              <Menu vertical inverted>
+              <div className="game-links">
+                <div>
 
-          </div>
-          <div className='column column-50'>
-            <div className="game-links">
-              <div>
-                <a target="_blank" href={domain() + "/#/" + this.state.p1_token}>
-                <Button inverted color='red'>
-                  Player 1
-                </Button>
-                </a>
-                <a target="_blank" href={domain() + "/#/" + this.state.p2_token}>
-                <Button inverted color='orange'>
-                  Player 2
-                </Button>
-                </a>
-            </div>
-          </div>
+                  <a target="_blank" href={domain() + "/#/" + this.state.p1_token}>
+                    <Button inverted color='red'>
+                      <Label className='game-labels' as='a' color='yellow' image>
+                        <img src='./img/game-label-1.png' height='30px' width='30px' alt="P1"/>
+                      </Label>
+                       Player 1
+                    </Button>
+                  </a>
+
+                  <a target="_blank" href={domain() + "/#/" + this.state.p2_token}>
+                    <Button inverted color='orange'>
+                      <Label className='game-labels' as='a' color='orange' image>
+                        <img src='./img/game-label-2.png' height='30px' width='30px' alt="P1"/>
+                      </Label>
+                       Player 2
+                    </Button>
+                  </a>
+
+                </div>
+              </div>
+              </Menu>
+
             <blockquote>
               <h5 className='turn'>{ this.state.turnText }</h5>
               <h5 className='status'>{ this.state.statusText }</h5>
