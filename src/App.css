@@ -1,1 +1,7 @@
+.view {
+  animation: fadeIn 0.2s ease-in;
+}
 
+.history span {
+  margin-right: 8px;
+}

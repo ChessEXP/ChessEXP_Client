@@ -3,7 +3,7 @@ import { Header } from 'semantic-ui-react';
 import $ from 'jquery';
 
 import { GoalBar } from './GoalBar';
-import { ChessBoard } from './ChessBoard';
+// import { ChessBoard } from './ChessBoard';
 
 export class Wall extends Component {
   constructor(props) {
@@ -24,7 +24,7 @@ export class Wall extends Component {
       <div className="wall-container">
         <Header as='h1'>Welcome back {this.state.currentUser.givenName}.</Header>
         <GoalBar />
-        <ChessBoard />
+        {/* <ChessBoard /> */}
       </div>
     );
   }

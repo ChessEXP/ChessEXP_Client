@@ -4,11 +4,14 @@
   "private": true,
   "dependencies": {
     "axios": "^0.16.2",
+    "history": "^4.6.1",
     "jquery": "^3.2.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-google-login": "^2.9.3",
+    "react-router-dom": "^4.1.2",
     "react-scripts": "1.0.10",
+    "s3": "^4.4.0",
     "script-loader": "^0.7.0",
     "semantic-ui-css": "^2.2.11",
     "semantic-ui-react": "^0.71.3"

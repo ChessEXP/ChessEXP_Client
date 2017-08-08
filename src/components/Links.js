@@ -69,17 +69,22 @@ export class Links extends Component {
 
     if(this.state.currentUser !== '') {
       userShow = (
-            <Segment className='render-current-user'>
-              <Image src={this.state.currentUser.imageUrl} alt="Avatar" bordered/>
+        <Segment className='render-current-user'>
+          <div className="outter-border">
+              <div className="inner-border">
+                <Image src={this.state.currentUser.imageUrl} alt="Avatar" bordered/>
 
-              <i className="israel flag"></i> <br/>
-              <Label as='a' color='orange' image>
-                <Label>
-                  <Icon name='mail' /> 12
+                <i className="israel flag"></i> <br/>
+                <Label as='a' color='orange' image>
+                  <Label>
+                    <Icon name='mail' /> 12
+                  </Label>
+                  <Label.Detail>{this.state.currentUser.email}</Label.Detail>
                 </Label>
-                <Label.Detail>{this.state.currentUser.email}</Label.Detail>
-              </Label>
+              </div>
+            </div>
           </Segment>
+
       );
     }
 

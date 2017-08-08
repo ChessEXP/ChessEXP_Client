@@ -29,15 +29,21 @@ li {
 /*1C5089, 70ADEF, 6D8DAE, 68DEC1, A8F56B*/
 
 .render-current-user {
-  background: url('/img/avatar-bkg.png') no-repeat center !important;
+  background: #1F5995 !important;
   background-size: 100% !important;
-  border: 10px solid black !important;
+  border: 10px solid #A8F56B !important;
   float: right;
-  border:blue 1px solid;
-  display:inline-block;
-  *display:inline;zoom:1;
-  margin:0px;outline:none;
-  vertical-align: top;
+  margin-top: -40px !important; 
+}
+
+.inner-border {
+  background: #68DEC1 !important;
+  border: 10px solid #70ADEF;
+}
+
+.outter-border {
+  background: #1C5089 !important;
+  border: 10px solid #1F5995;
 }
 
 .float-right {
