@@ -24,9 +24,11 @@ export default class ChessMulti extends Component {
           <div className='column column-50'>
             <div className="links">
               <div>
+                <a target="_blank" href={domain() + "/#/" + this.state.p1_token}>
                 <Button inverted color='red'>
-                  Player 1<a target="_blank" href={domain() + "/#/" + this.state.p1_token}></a>
+                  Player 1
                 </Button>
+                </a>
                 <a target="_blank" href={domain() + "/#/" + this.state.p2_token}>
                 <Button inverted color='orange'>
                   Player 2

@@ -1,25 +1,10 @@
 import React, { Component } from 'react';
-import { Grid, Image } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'; // Image
 import $ from 'jquery';
 
 import { Event } from './Event';
 
 import { getEvents } from '../axios/request.js';
-
-const testEvent = <Event title="Grand Prix Open"
-                           host="Wesley So"
-                           image="https://mir-s3-cdn-cf.behance.net/project_modules/disp/db147622772589.56364dd2b03f1.jpg"
-                           description="Winner takes all."
-                           rsvpList={ ['Sarah', 'John', 'Michelle', 'Mike'] }
-                           />
-
-// const testEventFormat = <Event rsvpList={this.state.eventList.attendees}
-//                            commentList={this.state.eventList.chatLog}
-//                            host={this.state.eventList[i].host}
-//                            title={this.state.eventList[i].title}
-//                            description={this.state.eventList[i].description}
-//                            image={this.state.eventList[i].location}
-//                            />
 
 
 export class EventsPage extends Component {

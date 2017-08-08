@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import GoogleLogin from 'react-google-login';
+// import GoogleLogin from 'react-google-login';
 
 import { About } from './About';
 import { EventsPage } from './EventsPage';
 import { Wall } from './Wall';
 
-import { Button, Image, Segment, Header, Icon, Label } from 'semantic-ui-react'
+import { Button, Image, Segment, Header } from 'semantic-ui-react' // Icon, Label
 
 
 export class Links extends Component {
@@ -23,14 +23,14 @@ export class Links extends Component {
 
   }
 
-  onResponseOauth(response) {
-    console.log(response.profileObj);
-    this.setState({
-                    currentUser: response.profileObj,
-                    logoutText: 'Logout',
-                    btn: false
-                  });
-  }
+  // onResponseOauth(response) {
+  //   console.log(response.profileObj);
+  //   this.setState({
+  //                   currentUser: response.profileObj,
+  //                   logoutText: 'Logout',
+  //                   btn: false
+  //                 });
+  // }
 
   onShowAbout() {
 
@@ -67,26 +67,26 @@ export class Links extends Component {
     let wallShow = '';
     let aboutShow = '';
 
-    if(this.state.currentUser !== '') {
-      userShow = (
-        <Segment className='render-current-user'>
-          <div className="outter-border">
-              <div className="inner-border">
-                <Image src={this.state.currentUser.imageUrl} alt="Avatar" bordered/>
-
-                <i className="israel flag"></i> <br/>
-                <Label as='a' color='orange' image>
-                  <Label>
-                    <Icon name='mail' /> 12
-                  </Label>
-                  <Label.Detail>{this.state.currentUser.email}</Label.Detail>
-                </Label>
-              </div>
-            </div>
-          </Segment>
-
-      );
-    }
+    // if(this.state.currentUser !== '') {
+    //   userShow = (
+    //     <Segment className='render-current-user'>
+    //       <div className="outter-border">
+    //           <div className="inner-border">
+    //             <Image src={this.state.currentUser.imageUrl} alt="Avatar" bordered/>
+    //
+    //             <i className="israel flag"></i> <br/>
+    //             <Label as='a' color='orange' image>
+    //               <Label>
+    //                 <Icon name='mail' /> 12
+    //               </Label>
+    //               <Label.Detail>{this.state.currentUser.email}</Label.Detail>
+    //             </Label>
+    //           </div>
+    //         </div>
+    //       </Segment>
+    //
+    //   );
+    // }
 
     if (this.state.mountEvent) {
       eventShow = <EventsPage />
@@ -110,7 +110,7 @@ export class Links extends Component {
 
           { userShow }
 
-            <span className='float-right'>
+            {/* <span className='float-right'>
               {this.state.btn ? <GoogleLogin
                 className='ui red basic button'
                 clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
@@ -119,11 +119,11 @@ export class Links extends Component {
                 onSuccess={ this.onResponseOauth.bind(this) }
                 onFailure={ this.onResponseOauth.bind(this) }
               /> : null}
-            </span>
+            </span> */}
 
         </Segment>
-
         </nav>
+
         <div className="float-left">
           { eventShow }
           { wallShow }
