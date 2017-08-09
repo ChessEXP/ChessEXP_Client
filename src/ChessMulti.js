@@ -5,12 +5,19 @@ const { firebase, Chess, ChessBoard } = window;
 
 const INITIAL_FEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR";
 
-export default class ChessMulti extends Component {
+export class ChessMulti extends Component {
 
-  constructor({ match: { params: { token } } }) {
+  constructor(props) { // { match: { params: { token } } }
+    console.log(props)
     super();
-    this.state = { token };
+
+    this.state = { token: props.match.params.token };
     this.engine = new Chess();
+
+    listenForUpdates(this.state.token, (id, game) => {
+      this._updateBoard(id, game);
+      this._updateInfo(game);
+    });
   }
 
   render() {
@@ -41,15 +48,15 @@ export default class ChessMulti extends Component {
                     </Button>
                   </a>
 
+                  <p className='history'>{ history(this.state.moves) }<br/></p>
+
                 </div>
               </div>
               </Menu>
 
             <blockquote>
-              <h5 className='turn'>{ this.state.turnText }</h5>
-              <h5 className='status'>{ this.state.statusText }</h5>
+              <h5 className='turn'>{ this.state.statusText || this.state.turnText }</h5>
             </blockquote>
-            <p className='history'>{ history(this.state.moves) }</p>
           </div>
         </Segment>
         </div>
@@ -57,10 +64,7 @@ export default class ChessMulti extends Component {
   }
 
   componentDidMount() {
-    listenForUpdates(this.state.token, (id, game) => {
-      this._updateBoard(id, game);
-      this._updateInfo(game);
-    });
+
   }
 
   _updateInfo(game) {
@@ -213,6 +217,7 @@ function turnText(playerNum, isMyTurn) {
 function statusText(turn, in_mate, in_draw, in_check) {
   const moveColor = turn === 'b' ? "Black" : "White";
   if (in_mate) {
+    // animation()
     return 'CheckMate';
   } else if (in_draw) {
     return 'Draw';

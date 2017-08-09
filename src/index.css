@@ -208,3 +208,17 @@ li {
   display: flex;
   align-items: center;
 }
+
+.game-links {
+  padding: 10px;
+  min-width: 400px;
+}
+
+.center-board {
+  margin-left: 50px;
+}
+
+.event-image {
+  height: 300px;
+  width: 200px;
+}

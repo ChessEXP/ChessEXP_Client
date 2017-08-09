@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3001/';
+const API_URL = 'https://chessexp.herokuapp.com/';
 
 export function getEvents() {
   return axios.get(`${API_URL}events`);

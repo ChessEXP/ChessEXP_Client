@@ -4,8 +4,8 @@ import { HashRouter, Route } from 'react-router-dom';
 import './App.css';
 
 import { Links } from './components/Links';
-import ChessHome from './ChessHome';
-import ChessMulti from './ChessMulti';
+import { ChessHome } from './ChessHome';
+import { ChessMulti } from './ChessMulti';
 
 export default class App extends Component {
   render() {

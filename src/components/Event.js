@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 // import { RSVPBar } from './RSVPBar';
 
-import { Button, Segment, Label, List, Transition} from 'semantic-ui-react';
+import { Button, Segment, Label, List} from 'semantic-ui-react';  // Image
 
 
 export class Event extends Component {
@@ -36,7 +36,7 @@ export class Event extends Component {
 
   onRSVP() {
     let subState = [(this.state.currentUser || 'currentUser')];
-    if (this.state.eventRSVP[0] != 'Drew' || this.state.eventRSVP[0] != this.state.currentUser){
+    if (this.state.eventRSVP[0] !== 'Drew' || this.state.eventRSVP[0] !== this.state.currentUser){
     this.state.eventRSVP.map((User) => {
         subState.push(User);
 
@@ -60,7 +60,17 @@ export class Event extends Component {
 
       <div className="event-contaner">
         <h1 className="event-title">{this.state.eventTitle}</h1>
-        <img onClick={this.toggleShow.bind(this)} src={this.state.eventImage} alt={this.state.eventDescription} height='300px' width='200px'/> {(this.state.toggleDetails)
+        {/* <Reveal animated='fade'>
+          <Reveal.Content visible className="center-board">
+            <img onClick={this.toggleShow.bind(this)} src='./img/board.jpg' alt={this.state.eventDescription} height='300px' width='200px' />
+          </Reveal.Content>
+          <Reveal.Content hidden> */}
+            <img className='event-image' onClick={this.toggleShow.bind(this)}
+                 src={this.state.eventImage}
+                 alt={this.state.eventDescription}/>
+          {/* </Reveal.Content>
+        </Reveal> */}
+        {(this.state.toggleDetails)
           ? (
             <div className="adjacent">
               <small>{this.state.eventLocat}</small>
@@ -73,12 +83,14 @@ export class Event extends Component {
                   <Button size='huge' onClick={ this.onRSVP.bind(this) }>RSVP</Button>
                 <small className="rsvp-error">{ this.state.errorMessage }</small>
                 <ul>
+
                   {this.state.eventRSVP.map((person, i) => {
                     return (
                       <List.Item key={i + 50}>
                         {person}
                       </List.Item>
                     );
+
                   })}
                 </ul>
                 </Segment>
