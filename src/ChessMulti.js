@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import $ from 'jquery';
 import { Segment, Button, Label, Menu } from 'semantic-ui-react';
 
 const { firebase, Chess, ChessBoard } = window;
@@ -7,7 +8,7 @@ const INITIAL_FEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR";
 
 export class ChessMulti extends Component {
 
-  constructor(props) { // { match: { params: { token } } }
+  constructor(props) {
     console.log(props)
     super();
 
@@ -19,6 +20,10 @@ export class ChessMulti extends Component {
       this._updateInfo(game);
     });
   }
+  componentDidMount() {
+    $('.board-hidden').css('display', 'inline-block');
+  }
+
 
   render() {
     return (
@@ -61,10 +66,6 @@ export class ChessMulti extends Component {
         </Segment>
         </div>
     );
-  }
-
-  componentDidMount() {
-
   }
 
   _updateInfo(game) {

@@ -15,6 +15,7 @@ export class Wall extends Component {
 
   componentDidMount() {
     $('.board-hidden').css('display', 'block');
+    $('#game-board').css('display', 'inline-block');
   }
 
   render() {

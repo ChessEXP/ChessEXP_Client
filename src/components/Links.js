@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import GoogleLogin from 'react-google-login';
 
 import { About } from './About';
+import { Explorer } from './Explorer';
 import { EventsPage } from './EventsPage';
 import { Wall } from './Wall';
 
-import { Button, Image, Segment, Header, Icon, Label } from 'semantic-ui-react'
+import { Button, Image, Segment, Header, Label } from 'semantic-ui-react'
 
 
 export class Links extends Component {
@@ -13,9 +14,10 @@ export class Links extends Component {
     super();
 
     this.state = {
+      mountBoard: true,
       mountWall: false,
       mountEvent: false,
-      mountAbout: true,
+      mountAbout: false,
       currentUser: '',
       logoutText: 'Login',
       btn: true
@@ -36,7 +38,8 @@ export class Links extends Component {
     this.setState({
       mountWall: false,
       mountEvent: false,
-      mountAbout: true
+      mountAbout: true,
+      mountBoard: false
     });
 
   }
@@ -46,7 +49,8 @@ export class Links extends Component {
     this.setState({
       mountWall: false,
       mountEvent: true,
-      mountAbout: false
+      mountAbout: false,
+      mountBoard: false
     });
 
   }
@@ -56,11 +60,23 @@ export class Links extends Component {
     this.setState({
       mountWall: true,
       mountAbout: false,
-      mountEvent: false
+      mountEvent: false,
+      mountBoard: false
+    });
+  }
+
+  onShowExplorer() {
+
+    this.setState({
+      mountWall: false,
+      mountAbout: false,
+      mountEvent: false,
+      mountBoard: true
     });
   }
 
   render() {
+    let boardShow = '';
     let userShow = '';
     let eventShow = '';
     let wallShow = '';
@@ -85,6 +101,8 @@ export class Links extends Component {
       aboutShow = <About />
     } else if (this.state.mountWall) {
       wallShow = <Wall userInfo={ (this.state.currentUser !== '') ? this.state.currentUser : 'Not-loggedin-Person' } />
+    } else if (this.state.mountBoard) {
+      boardShow = <Explorer />
     }
 
     return (
@@ -95,6 +113,7 @@ export class Links extends Component {
 
           <Button inverted color='teal' onClick={ this.onShowWall.bind(this) }>Wall</Button>
           <Button inverted color='olive' onClick={ this.onShowEvent.bind(this) }>Events</Button>
+          <Button inverted color='orange' onClick={ this.onShowExplorer.bind(this) }>Explorer</Button>
           <Button inverted color='blue' onClick={ this.onShowAbout.bind(this) }>About</Button>
 
           { userShow }
@@ -120,6 +139,7 @@ export class Links extends Component {
           { eventShow }
           { wallShow }
           { aboutShow }
+          { boardShow }
         </div>
       </div>
     );

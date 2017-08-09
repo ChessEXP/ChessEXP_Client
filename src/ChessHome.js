@@ -37,7 +37,7 @@ export class ChessHome extends Component {
     return (
       <div className="board-hidden create-multi-row">
         <Segment inverted>
-          <h1>ChessEXP PvP/Battle Royale</h1>
+          <h1 className='battle-royale'>ChessEXP PvP/Battle Royale</h1>
           <Button onClick={ this.createGame.bind(this) } inverted size='massive' color='red'>Init EXP</Button>
         </Segment>
       </div>
