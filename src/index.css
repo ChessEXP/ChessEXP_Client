@@ -28,19 +28,20 @@ li {
   text-align: left;
 }
 
-.app-logo-knight-right {
+.app-logo-knight-left {
   margin: auto;
-  margin-top: -75px;
-  margin-right: 45%;
+  margin-top: -100px;
+  margin-left: 38%;
   position: relative;
   display: inline-block;
   height: 175px;
   width: 160px;
 }
-.app-logo-knight-left {
+
+.app-logo-knight-right {
   margin: auto;
-  margin-top: -210px;
-  margin-right: 38%;
+  margin-top: -120px;
+  margin-left: 45%;
   position: relative;
   display: inline-block;
   height: 175px;

@@ -24,7 +24,6 @@ export class Links extends Component {
   }
 
   onResponseOauth(response) {
-    console.log(response.profileObj);
     this.setState({
                     currentUser: response.profileObj,
                     logoutText: 'Logout',
@@ -70,19 +69,11 @@ export class Links extends Component {
     if(this.state.currentUser !== '') {
       userShow = (
         <Segment className='render-current-user'>
-          <div className="outter-border">
-              <div className="inner-border">
                 <Image src={this.state.currentUser.imageUrl} alt="Avatar" bordered/>
-
                 <i className="israel flag"></i> <br/>
                 <Label as='a' color='orange' image>
-                  <Label>
-                    <Icon name='mail' /> 12
-                  </Label>
                   <Label.Detail>{this.state.currentUser.email}</Label.Detail>
                 </Label>
-              </div>
-            </div>
           </Segment>
 
       );
@@ -122,8 +113,8 @@ export class Links extends Component {
         </Segment>
         </nav>
 
-        <Image className='app-logo-knight-right' src='./img/applogo2.png'></Image>
         <Image className='app-logo-knight-left' src='./img/applogo.png'></Image>
+        <Image className='app-logo-knight-right' src='./img/applogo2.png'></Image>
 
         <div className="float-left">
           { eventShow }

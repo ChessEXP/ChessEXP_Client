@@ -20,7 +20,6 @@ export class EventsPage extends Component {
     $('.board-hidden').css('display', 'none');
 
     getEvents().then((results) => {
-      console.log(results);
       this.setState({
         eventList: results.data
       });

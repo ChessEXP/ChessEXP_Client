@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 
 import { GoalBar } from './GoalBar';
-// import { ChessBoard } from './ChessBoard';
 
 export class Wall extends Component {
   constructor(props) {
@@ -22,7 +21,6 @@ export class Wall extends Component {
     return(
       <div className="wall-container">
         <GoalBar />
-        {/* <ChessBoard /> */}
       </div>
     );
   }

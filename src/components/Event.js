@@ -2,13 +2,11 @@ import React, {Component} from 'react';
 
 // import { RSVPBar } from './RSVPBar';
 
-import { Button, Segment, Label, List} from 'semantic-ui-react';  // Image
-
+import {Button, Segment, Label, List} from 'semantic-ui-react'; // Image
 
 export class Event extends Component {
   constructor(props) {
     super();
-    console.log(props);
 
     this.state = {
       eventDay: props.day,
@@ -27,32 +25,23 @@ export class Event extends Component {
 
   toggleShow() {
     let toggle = !this.state.toggleDetails
-    this.setState({
-      toggleDetails: toggle
-    })
-
-    console.log(this.state.toggleDetails)
+    this.setState({toggleDetails: toggle});
   }
 
   onRSVP() {
     let subState = [(this.state.currentUser || 'currentUser')];
-    if (this.state.eventRSVP[0] !== 'Drew' || this.state.eventRSVP[0] !== this.state.currentUser){
-    this.state.eventRSVP.map((User) => {
+    if (this.state.eventRSVP[0] !== 'Drew' || this.state.eventRSVP[0] !== this.state.currentUser) {
+      this.state.eventRSVP.map((User) => {
         subState.push(User);
 
-      return User;
-    });
+        return User;
+      });
 
-    this.setState({
-      eventRSVP: subState
-    });
+      this.setState({eventRSVP: subState});
 
-  } else {
-    this.setState({
-      errorMessage: 'One RSVP per Event'
-    });
-  }
-    console.log(this.state.eventRSVP);
+    } else {
+      this.setState({errorMessage: 'One RSVP per Event'});
+    }
   }
 
   render() {
@@ -65,10 +54,7 @@ export class Event extends Component {
             <img onClick={this.toggleShow.bind(this)} src='./img/board.jpg' alt={this.state.eventDescription} height='300px' width='200px' />
           </Reveal.Content>
           <Reveal.Content hidden> */}
-            <img className='event-image' onClick={this.toggleShow.bind(this)}
-                 src={this.state.eventImage}
-                 alt={this.state.eventDescription}/>
-          {/* </Reveal.Content>
+        <img className='event-image' onClick={this.toggleShow.bind(this)} src={this.state.eventImage} alt={this.state.eventDescription}/> {/* </Reveal.Content>
         </Reveal> */}
         {(this.state.toggleDetails)
           ? (
@@ -76,29 +62,27 @@ export class Event extends Component {
               <small>{this.state.eventLocat}</small>
 
               <p className="event-host">-{this.state.eventHost}</p>
-              <p className="event-description">'{ this.state.eventDesc }'</p>
+              <p className="event-description">'{this.state.eventDesc}'</p>
               <div className="goal-bar">
                 <Segment className="segment-rsvp" inverted raised>
                   <Label as='a' color='red' ribbon>{this.state.eventDay}</Label>
-                  <Button size='huge' onClick={ this.onRSVP.bind(this) }>RSVP</Button>
-                <small className="rsvp-error">{ this.state.errorMessage }</small>
-                <ul>
+                  <Button size='huge' onClick={this.onRSVP.bind(this)}>RSVP</Button>
+                  <small className="rsvp-error">{this.state.errorMessage}</small>
+                  <ul>
 
-                  {this.state.eventRSVP.map((person, i) => {
-                    return (
-                      <List.Item key={i + 50}>
-                        {person}
-                      </List.Item>
-                    );
+                    {this.state.eventRSVP.map((person, i) => {
+                      return (
+                        <List.Item key={i + 50}>
+                          {person}
+                        </List.Item>
+                      );
 
-                  })}
-                </ul>
+                    })}
+                  </ul>
                 </Segment>
               </div>
             </div>
-          )
-        : ''
-}
+          ) : ''}
       </div>
 
     );

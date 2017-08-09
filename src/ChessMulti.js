@@ -32,7 +32,7 @@ export class ChessMulti extends Component {
 
                   <a target="_blank" href={domain() + "/#/" + this.state.p1_token}>
                     <Button inverted color='red'>
-                      <Label className='game-labels' as='a' color='yellow' image>
+                      <Label className='game-labels' color='yellow' image>
                         <img src='./img/game-label-1.png' height='30px' width='30px' alt="P1"/>
                       </Label>
                        Player 1
@@ -41,7 +41,7 @@ export class ChessMulti extends Component {
 
                   <a target="_blank" href={domain() + "/#/" + this.state.p2_token}>
                     <Button inverted color='orange'>
-                      <Label className='game-labels' as='a' color='orange' image>
+                      <Label className='game-labels' color='orange' image>
                         <img src='./img/game-label-2.png' height='30px' width='30px' alt="P1"/>
                       </Label>
                        Player 2
