@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid } from 'semantic-ui-react'; // Image
+import { Grid, Segment } from 'semantic-ui-react'; // Image
 import $ from 'jquery';
 
 import { Event } from './Event';
@@ -51,18 +51,25 @@ export class EventsPage extends Component {
       });
 
       if (List.length === 0 || List.length === undefined) {
-        List = ( 'No Chess Events in the Area' );
+        List = ( 'Loading events from heroku, should be populated in 30-90 seconds..' );
       }
 
     return (
-      <div className="events-page-container">
-        <ul>
-          <Grid columns={3} divided>
-            <Grid.Row className='event-grid-row'>
-              {List}
-            </Grid.Row>
-          </Grid>
-        </ul>
+      <div className="wrapper">
+        <Segment inverted className='pvp-message'>
+          <small>
+            Click an Event to toggle RSVP.
+          </small>
+        </Segment>
+        <div className="events-page-container">
+          <ul>
+            <Grid columns={3} divided>
+              <Grid.Row className='event-grid-row'>
+                {List}
+              </Grid.Row>
+            </Grid>
+          </ul>
+        </div>
       </div>
     );
   }

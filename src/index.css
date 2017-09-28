@@ -227,3 +227,8 @@ li {
 .battle-royale {
   font-size: 50px;
 }
+
+.pvp-message {
+  text-align: center;
+  width: 400px;
+}

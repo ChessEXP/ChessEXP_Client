@@ -9,7 +9,6 @@ const INITIAL_FEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR";
 export class ChessMulti extends Component {
 
   constructor(props) {
-    console.log(props)
     super();
 
     this.state = { token: props.match.params.token };
@@ -20,14 +19,21 @@ export class ChessMulti extends Component {
       this._updateInfo(game);
     });
   }
+
   componentDidMount() {
     $('.board-hidden').css('display', 'inline-block');
+      console.log(Chess());
   }
 
 
   render() {
     return (
       <div className='board-hidden view row'>
+        <Segment inverted className='pvp-message'>
+          <small>Copy the Hashed link in the address bar once a new window opens for player 2 and have them navigate to the Wall Page.
+          You can also send the P2 hashed link to a friend across the world for the full PvP online experience.
+          </small>
+        </Segment>
         <Segment inverted className='chessboard-segment'>
           <div className='column column-50'>
             <div id='game-board' style={{width: 600 + 'px'}}></div>

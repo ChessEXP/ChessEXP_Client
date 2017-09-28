@@ -46,45 +46,42 @@ export class Event extends Component {
 
   render() {
     return (
+      <div className="wrapper">
+        <div className="event-contaner">
 
-      <div className="event-contaner">
-        <h1 className="event-title">{this.state.eventTitle}</h1>
-        {/* <Reveal animated='fade'>
-          <Reveal.Content visible className="center-board">
-            <img onClick={this.toggleShow.bind(this)} src='./img/board.jpg' alt={this.state.eventDescription} height='300px' width='200px' />
-          </Reveal.Content>
-          <Reveal.Content hidden> */}
-        <img className='event-image' onClick={this.toggleShow.bind(this)} src={this.state.eventImage} alt={this.state.eventDescription}/> {/* </Reveal.Content>
-        </Reveal> */}
-        {(this.state.toggleDetails)
-          ? (
-            <div className="adjacent">
-              <small>{this.state.eventLocat}</small>
+          <h1 className="event-title">{this.state.eventTitle}</h1>
 
-              <p className="event-host">-{this.state.eventHost}</p>
-              <p className="event-description">'{this.state.eventDesc}'</p>
-              <div className="goal-bar">
-                <Segment className="segment-rsvp" inverted raised>
-                  <Label as='a' color='red' ribbon>{this.state.eventDay}</Label>
-                  <Button size='huge' onClick={this.onRSVP.bind(this)}>RSVP</Button>
-                  <small className="rsvp-error">{this.state.errorMessage}</small>
-                  <ul>
+          <img className='event-image' onClick={this.toggleShow.bind(this)} src={this.state.eventImage} alt={this.state.eventDescription}/> {/* </Reveal.Content>
+          </Reveal> */}
+          {(this.state.toggleDetails)
+            ? (
+              <div className="adjacent">
+                <small>{this.state.eventLocat}</small>
 
-                    {this.state.eventRSVP.map((person, i) => {
-                      return (
-                        <List.Item key={i + 50}>
-                          {person}
-                        </List.Item>
-                      );
+                <p className="event-host">-{this.state.eventHost}</p>
+                <p className="event-description">'{this.state.eventDesc}'</p>
+                <div className="goal-bar">
+                  <Segment className="segment-rsvp" inverted raised>
+                    <Label as='a' color='red' ribbon>{this.state.eventDay}</Label>
+                    <Button size='huge' onClick={this.onRSVP.bind(this)}>RSVP</Button>
+                    <small className="rsvp-error">{this.state.errorMessage}</small>
+                    <ul>
 
-                    })}
-                  </ul>
-                </Segment>
+                      {this.state.eventRSVP.map((person, i) => {
+                        return (
+                          <List.Item key={i + 50}>
+                            {person}
+                          </List.Item>
+                        );
+
+                      })}
+                    </ul>
+                  </Segment>
+                </div>
               </div>
-            </div>
-          ) : ''}
+            ) : ''}
+          </div>
       </div>
-
     );
   }
 }
